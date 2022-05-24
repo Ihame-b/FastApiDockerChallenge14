@@ -3,10 +3,10 @@ version: '3'
 services:
   twitter:
     build:
-      context: ./
+      context: ./ihametoken
       dockerfile: Dockerfile
     volumes:
-      - ./:/
+      - ./ihametoken/:/ihametoken/
       - /var/run/docker.sock:/var/run/docker.sock
     command: uvicorn server:app --reload --workers 1 --host 0.0.0.0 --port 8080
     env_file:
